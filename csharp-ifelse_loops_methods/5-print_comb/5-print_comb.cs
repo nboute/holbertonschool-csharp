@@ -7,12 +7,12 @@ namespace _5_print_comb
     {
         static void Main(string[] args)
         {
-            List<int> comb = new List<int>();
+            List<string> comb = new List<string>();
             for (int i = 0; i < 100; i++)
             {
-                comb.Add(i);
+                comb.Add(i.ToString("D2"));
             }
-            Console.WriteLine(String.Join(", ", comb));
+            Console.Write(String.Join(", ", comb) + "\n");
         }
     }
 }
