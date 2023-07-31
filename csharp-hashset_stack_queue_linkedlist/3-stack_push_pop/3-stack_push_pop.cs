@@ -9,7 +9,7 @@ class MyStack
         Console.WriteLine("Number of items: " + aStack.Count);
         Console.WriteLine("Top item: " + aStack.Peek());
         bool contains = aStack.Contains(search);
-        Console.WriteLine("Stack contains \"Javascript\": " + contains);
+        Console.WriteLine("Stack contains \"{0}\": {1}", search ,contains);
         while (aStack.Contains(search))
             aStack.Pop();
         aStack.Push(newItem);
