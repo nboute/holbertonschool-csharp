@@ -11,7 +11,7 @@ class Array
         }
         for (int i = 0; i < array.Length; i++)
         {
-            Console.Write(array[i]);
+            Console.Write(array[array.Length - i - 1]);
             if (i < array.Length - 1)
                 Console.Write(" ");
             else

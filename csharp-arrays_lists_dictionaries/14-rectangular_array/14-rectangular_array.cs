@@ -12,9 +12,7 @@ namespace _14_rectangular_array
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    Console.Write(array[i, j]);
-                    if (j != 5)
-                        Console.Write(" ");
+                    Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine("");
             }
