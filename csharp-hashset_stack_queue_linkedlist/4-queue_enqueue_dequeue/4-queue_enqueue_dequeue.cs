@@ -11,14 +11,14 @@ class MyQueue
             Console.WriteLine("Queue is empty");
         else
             Console.WriteLine("First Item: {0}", aQueue.Peek());
-        
-        aQueue.Enqueue(newItem);
+
         Console.WriteLine("Queue contains \"{0}\": {1}", search, aQueue.Contains(search));
         if (aQueue.Contains(search))
         {
             while (aQueue.Contains(search))
                 aQueue.Dequeue();
         }
+        aQueue.Enqueue(newItem);
         return aQueue;
     }
 }
