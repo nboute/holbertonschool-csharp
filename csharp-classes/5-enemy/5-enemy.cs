@@ -51,7 +51,7 @@
 		/// <summary>
 		/// Returns a string representation of the Zombie instance
 		/// </summary>
-		public override string toString()
+		public override string ToString()
 		{
 			return "Zombie name: " + name + " / Total Health: " + health;
 		}
