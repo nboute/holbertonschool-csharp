@@ -41,6 +41,7 @@ namespace Text.Tests
 		/// <summary>
 		/// Test: Empty string
 		/// </summary>
+		[Test]
 		public void TestEmpty()
 		{
 			Assert.That(Str.UniqueChar(""), Is.EqualTo(-1));
