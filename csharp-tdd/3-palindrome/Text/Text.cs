@@ -15,8 +15,7 @@ namespace Text
 		{
 			if (s.Length == 0 || s.Length == 1)
 				return true;
-			s = new string(s.Where(c => !char.IsPunctuation(c)).ToArray());
-
+			s = new string(s.Where(c => !char.IsPunctuation(c) && !char.IsWhiteSpace(c)).ToArray());
 			for (int i = 0; i < s.Length / 2; i++)
 			{
 				if (char.ToLower(s[i]) != char.ToLower(s[s.Length - 1 - i]))

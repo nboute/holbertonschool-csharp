@@ -17,9 +17,9 @@ namespace Text.Tests
 		/// </summary>
 		/// <param name="s"></param>
 		/// <param name="expected"></param>
-        [TestCase("aaa", 1)]
-        [TestCase("abcdefa", 6)]
-        [TestCase("abcdefab", 6)]
+        [TestCase("aaa", -1)]
+        [TestCase("abcdefa", 1)]
+        [TestCase("abcdefab", 2)]
         public void TestRepeating(string s, int expected)
         {
             Assert.That(Str.UniqueChar(s), Is.EqualTo(expected));
@@ -33,10 +33,17 @@ namespace Text.Tests
         [TestCase("abcdef")]
         [TestCase("uniq")]
 		[TestCase("a")]
-		[TestCase("")]
 		public void TestUnique(string s)
 		{
-			Assert.That(Str.UniqueChar(s), Is.EqualTo(-1));
+			Assert.That(Str.UniqueChar(s), Is.EqualTo(0));
+		}
+
+		/// <summary>
+		/// Test: Empty string
+		/// </summary>
+		public void TestEmpty()
+		{
+			Assert.That(Str.UniqueChar(""), Is.EqualTo(-1));
 		}
     }
 }

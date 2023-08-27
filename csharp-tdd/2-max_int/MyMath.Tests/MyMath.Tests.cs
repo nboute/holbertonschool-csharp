@@ -22,6 +22,28 @@ namespace MyMath.Tests
         }
 
 		/// <summary>
+		/// Test: With max value at start
+		/// </summary>
+		[Test]
+        public void TestMaxStart()
+        {
+			List<int> nums = new List<int> {12, 1, 2, 3, 4, 5 };
+
+			Assert.That(Operations.Max(nums), Is.EqualTo(5));
+        }
+
+		/// <summary>
+		/// Test: With max value in the middle
+		/// </summary>
+		[Test]
+        public void TestMaxMiddle()
+        {
+			List<int> nums = new List<int> {12, 1, 20, 3, 4, 5 };
+
+			Assert.That(Operations.Max(nums), Is.EqualTo(5));
+        }
+
+		/// <summary>
 		/// Test: With negative values
 		/// </summary>
 		[Test]

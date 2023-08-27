@@ -19,7 +19,6 @@ namespace Text.Tests
 		[TestCase("jambon", false)]
 		[TestCase("radars", false)]
 		[TestCase("lola", false)]
-		[TestCase("A man, a plan, a canal: Panama.", false)]
 
         public void TestPalindrome(string s, bool expected)
 		{
@@ -33,6 +32,13 @@ namespace Text.Tests
 		public void TestEmpty()
 		{
 			Assert.AreEqual(Str.IsPalindrome(""), true);
+		}
+
+		[TestCase("A man, a plan, a canal: Panama.", true)]
+		[TestCase("No 'x' in Nixon", true)]
+		public void TestPunctuation(string s, bool expected)
+		{
+			Assert.AreEqual(Str.IsPalindrome(s), expected);
 		}
     }
 }

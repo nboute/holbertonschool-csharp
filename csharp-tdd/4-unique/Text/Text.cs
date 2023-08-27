@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Text
 {
@@ -12,16 +13,14 @@ namespace Text
 		/// </summary>
 		public static int UniqueChar(string s)
 		{
-			int[] chars = new int[128];
-			int i = 0;
-
-			for (i = 0; i < s.Length; i++)
+			if (s.Length == 1)
+				return 0;
+			try
 			{
-				chars[s[i]]++;
-				if (chars[s[i]] == 1)
-					return i;
+				return s.IndexOf(s.GroupBy(c => c).First(ls => ls.Count() == 1).Key);
+			} catch (InvalidOperationException) {
+				return -1;
 			}
-			return -1;
 		}
     }
 }
