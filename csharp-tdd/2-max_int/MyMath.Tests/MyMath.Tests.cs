@@ -29,7 +29,7 @@ namespace MyMath.Tests
         {
 			List<int> nums = new List<int> {12, 1, 2, 3, 4, 5 };
 
-			Assert.That(Operations.Max(nums), Is.EqualTo(5));
+			Assert.That(Operations.Max(nums), Is.EqualTo(12));
         }
 
 		/// <summary>
@@ -40,7 +40,7 @@ namespace MyMath.Tests
         {
 			List<int> nums = new List<int> {12, 1, 20, 3, 4, 5 };
 
-			Assert.That(Operations.Max(nums), Is.EqualTo(5));
+			Assert.That(Operations.Max(nums), Is.EqualTo(20));
         }
 
 		/// <summary>
