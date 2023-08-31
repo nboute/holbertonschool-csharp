@@ -95,4 +95,13 @@ class Square : Rectangle
         }
     }
 
+    /// <summary>
+    /// Returns a string representation of the square.
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        return ($"[Square] {size} / {size}");
+    }
+
 }
