@@ -5,6 +5,7 @@
 /// </summary>
 class MatrixMath
 {
+
     /// <summary>
     /// method that calculates the determinant of a matrix
     /// </summary>
@@ -12,25 +13,27 @@ class MatrixMath
     /// <returns></returns>
     public static double Determinant(double[,] matrix)
     {
-        double a = 0;
-        double b = 0;
+        double a, b, c;
+
         if (matrix == null
             || matrix.GetLength(0) != matrix.GetLength(1)
             || matrix.GetLength(0) < 2
             || matrix.GetLength(0) > 3)
             return -1;
-        
+
         if (matrix.GetLength(0) == 2)
         {
             a = matrix[0, 0] * matrix[1, 1];
             b = matrix[0, 1] * matrix[1, 0];
+            return a - b;
         }
         else
         {
-            a = matrix[0, 0] * matrix[1, 1] * matrix[2, 2] + matrix[0, 1] * matrix[1, 2] * matrix[2, 0] + matrix[0, 2] * matrix[1, 0] * matrix[2, 1];
-            b = matrix[0, 2] * matrix[1, 1] * matrix[2, 0] + matrix[0, 1] * matrix[1, 0] * matrix[2, 2] + matrix[0, 0] * matrix[1, 2] * matrix[2, 1];
+            a = matrix[0, 0] * ((matrix[1, 1] * matrix[2, 2]) - (matrix[1, 2] * matrix[2, 1]));
+            b = matrix[0, 1] * ((matrix[1, 0] * matrix[2, 2]) - (matrix[1, 2] * matrix[2, 0]));
+            c = matrix[0, 2] * ((matrix[1, 0] * matrix[2, 1]) - (matrix[1, 1] * matrix[2, 0]));
+            return a - b + c;
         }
-        return a - b;
     }
 
 }
