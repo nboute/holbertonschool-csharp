@@ -15,21 +15,15 @@ class MatrixMath
     {
         if (matrix == null || matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
             return new double[,] {{-1}};
+        double cosAngle = Math.Cos(angle);
+        double sinAngle = Math.Sin(angle);
 
         double[,] result = new double[2, 2];
-        double[,] rotation = new double[,]
-            {
-                { Math.Cos(angle), Math.Sin(angle) },
-                { -Math.Sin(angle), Math.Cos(angle) }
-            };
 
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-            {
-                for (int k = 0; k < 2; k++)
-                    result[i, j] += matrix[i, k] * rotation[k, j];
-                result[i, j] = Math.Round(result[i, j], 2);
-            }
+        result[0, 0] = Math.Round(matrix[0, 0] * cosAngle - matrix[0, 1] * sinAngle, 2);
+        result[0, 1] = Math.Round(matrix[0, 0] * sinAngle + matrix[0, 1] * cosAngle, 2);
+        result[1, 0] = Math.Round(matrix[1, 0] * cosAngle - matrix[1, 1] * sinAngle, 2);
+        result[1, 1] = Math.Round(matrix[1, 0] * sinAngle + matrix[1, 1] * cosAngle, 2);
 
         return result;
     }
