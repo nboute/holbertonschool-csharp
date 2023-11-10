@@ -134,6 +134,9 @@ public class Decoration : Base, IInteractive, IBreakable
 /// </summary>
 public class Key : Base, ICollectable
 {
+    /// <summary>
+    /// Whether the object was collected
+    /// </summary>
     public bool isCollected { get; set; }
 
     /// <summary>
