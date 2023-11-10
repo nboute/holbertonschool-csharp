@@ -31,6 +31,9 @@ interface ICollectable
 /// </summary>
 public abstract class Base
 {
+    /// <summary>
+    /// Name property
+    /// </summary>
     public string name { get; set; }
     /// <summary>
     /// Override of the ToString method
@@ -47,19 +50,37 @@ public abstract class Base
 /// </summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
+    /// <summary>
+    /// Durability of the object
+    /// </summary>
     public int durability { get; set; }
+
+    /// <summary>
+    /// Whether the object is collected
+    /// </summary>
     public bool isCollected { get; set; }
 
+    /// <summary>
+    /// Interact implementation
+    /// </summary>
     public void Interact()
     {
         throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Break implementation
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
     public void Break()
     {
         throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Collect implementation
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
     public void Collect()
     {
         throw new NotImplementedException();

@@ -31,6 +31,9 @@ interface ICollectable
 /// </summary>
 public abstract class Base
 {
+    /// <summary>
+    /// Name property
+    /// </summary>
     public string name { get; set; }
     /// <summary>
     /// Override of the ToString method
@@ -71,7 +74,14 @@ public class Door : Base, IInteractive
 /// </summary>
 public class Decoration : Base, IInteractive, IBreakable
 {
+    /// <summary>
+    /// Whether the object is a quest item
+    /// </summary>
     public bool isQuestItem = false;
+
+    /// <summary>
+    /// Durability of the decoration
+    /// </summary>
     public int durability { get; set; }
 
     /// <summary>
@@ -124,6 +134,9 @@ public class Decoration : Base, IInteractive, IBreakable
 /// </summary>
 public class Key : Base, ICollectable
 {
+    /// <summary>
+    /// Whether the key has been collected
+    /// </summary>
     public bool isCollected { get; set; }
 
     /// <summary>
