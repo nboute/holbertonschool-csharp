@@ -27,7 +27,7 @@ public class Player
     public Player(string name = "Player", float maxHp = 100f)
     {
         this.name = name;
-        if (maxHp > 0f)
+        if (maxHp <= 0f)
             this.maxHp = maxHp;
         else {
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
